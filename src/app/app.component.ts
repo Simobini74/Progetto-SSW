@@ -16,12 +16,16 @@ class newPost {
 })
 export class AppComponent{
   title: string = 'Progetto app Postit' ;
+  selezionato: string;
   name: string ='Simone Bini';
   postit: Array<newPost> =[
     new newPost('pippo','pluto'),
     new newPost('paperino','topolino')
 
   ]
+  selezionaPost(name: string) {
+	  this.selezionato = name;
+  }
 
 
 

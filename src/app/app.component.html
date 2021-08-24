@@ -2,6 +2,6 @@
 <h2>{{name}}</h2>
 <ul>
 <li *ngFor='let post of postit' >
-  <b>{{post.titolo}}</b> - {{post.contenu}}
+  <button (click)="selezionaPost(post.titolo)">{{post.titolo}}</button>
 </li>
 </ul>
