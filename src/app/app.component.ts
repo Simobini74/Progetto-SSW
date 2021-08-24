@@ -1,11 +1,11 @@
 import { Component, VERSION } from '@angular/core';
 
 class newPost {
-  nome: string;
-  valore: string; 
-  constructor(nome: string, valore: string) {
-    this.nome=nome;
-    this.valore=valore;
+  titolo: string;
+  contenuto: string; 
+  constructor(titolo: string, contenuto: string) {
+    this.titolo=titolo;
+    this.contenuto=contenuto;
   }
 }
 
