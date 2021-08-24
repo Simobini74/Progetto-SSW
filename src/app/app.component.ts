@@ -8,6 +8,10 @@ import { Component, VERSION } from '@angular/core';
 export class AppComponent{
   title: string = 'Progetto app Postit' ;
   name: string ='Simone Bini';
+  postit = [];
+
+
+
 
 
 }
