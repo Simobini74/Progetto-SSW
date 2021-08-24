@@ -26,6 +26,9 @@ export class AppComponent{
   selezionaPost(name: string) {
 	  this.selezionato = name;
   }
+  clean() {
+    this.selezionato=undefined;
+  }
 
 
 
