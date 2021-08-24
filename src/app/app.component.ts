@@ -16,18 +16,21 @@ class newPost {
 })
 export class AppComponent{
   title: string = 'Progetto app Postit' ;
-  selezionato: string;
+  selezione : newPost;
   name: string ='Simone Bini';
   postit: Array<newPost> =[
     new newPost('pippo','pluto'),
     new newPost('paperino','topolino')
 
   ]
-  selezionaPost(name: string) {
-	  this.selezionato = name;
+  selezionaPost(itemName: string) {
+	  var trovato: Array<newPost> = this.postit.filter(
+      el => ( el.titolo === itemName )
+    );
+    this.selezione = trovato[0];
   }
   clean() {
-    this.selezionato=undefined;
+    this.selezione=undefined;
   }
 
 
