@@ -5,6 +5,9 @@ import { Component, VERSION } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
-export class AppComponent  {
-  name = 'Angular ' + VERSION.major;
+export class AppComponent{
+  title: string = 'Progetto app Postit' ;
+  name: string ='Simone Bini';
+
+
 }
