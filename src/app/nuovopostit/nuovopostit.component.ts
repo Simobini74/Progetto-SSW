@@ -6,10 +6,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./nuovopostit.component.css']
 })
 export class NuovopostitComponent implements OnInit {
-  @Output() newCityEvent = new EventEmitter<string>();
+  @Output() newPostEvent = new EventEmitter<string>();
   constructor() { }
-  newCity(newName: string) {
-    this.newCityEvent.emit(newName);
+  newPost(newName: string) {
+    this.newPostEvent.emit(newName);
   }
 
   ngOnInit() {

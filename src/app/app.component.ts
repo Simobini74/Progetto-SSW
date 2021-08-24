@@ -32,6 +32,10 @@ export class AppComponent{
   clean() {
     this.selezione=undefined;
   }
+  addPost(newPost) {
+    this.postit.push(newPost);
+  }
+
 
 
 
