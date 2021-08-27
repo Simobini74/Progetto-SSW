@@ -1,4 +1,5 @@
 import { Component, VERSION } from '@angular/core';
+import { PostserviceService } from './postservice.service';
 
 class newPost {
   titolo: string;
@@ -23,6 +24,7 @@ export class AppComponent{
     new newPost('paperino','topolino')
 
   ]
+  constructor(private ps: PostserviceService ) { }
   selezionaPost(itemName: string) {
 	  var trovato: Array<newPost> = this.postit.filter(
       el => ( el.titolo === itemName )
