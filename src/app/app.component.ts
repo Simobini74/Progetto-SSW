@@ -30,10 +30,6 @@ export class AppComponent{
       el => ( el.titolo === itemName )
     );
     this.selezione = trovato[0];
-    this.ps.getData(this.selezione.titolo).subscribe(
-      ( x: any ) => this.selezione.contenuto = x.data[0].temp,
-      err => console.error('Observer got an error: ' + err)
-    );
     
   }
   clean() {
