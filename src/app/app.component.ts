@@ -19,12 +19,19 @@ export class AppComponent{
   title: string = 'Progetto app Postit' ;
   selezione : newPost;
   name: string ='Simone Bini';
-  postit: Array<newPost> =[
-    new newPost('pippo','pluto'),
-    new newPost('paperino','topolino')
+  key:string;
+  postit: Array<newPost>;
+  
+  constructor(private ps: PostserviceService ) {
+    this.postit=new Array<newPost>();
+   }
+  inviaChiave = async (key: string = null) => {
+    if(key == null) {
+      const k = await this.ps.requestKey();
+      this.inviaChiave(k);
+    }
+  }
 
-  ]
-  constructor(private ps: PostserviceService ) { }
   selezionaPost(itemName: string) {
 	  var trovato: Array<newPost> = this.postit.filter(
       el => ( el.titolo === itemName )

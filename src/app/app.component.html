@@ -11,3 +11,4 @@ Il contenuto di {{selezione.titolo}} è {{selezione.contenuto}}
 <button (click)= 'clean()'>Elimina il postit {{selezione.titolo}}</button>
 </p>
 <app-nuovopostit (NewPostEvent)="addPost($event)"> </app-nuovopostit>
+<button type="button" (click)="inviaChiave(key.value)">Invia chiave</button>
