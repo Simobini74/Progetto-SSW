@@ -1,11 +1,11 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-chiave',
   templateUrl: './chiave.component.html',
   styleUrls: ['./chiave.component.css']
 })
-export class ChiaveComponent implements OnInit {
+export class ChiaveComponent {
   @Output() newKeyEvent = new EventEmitter<string>();
   @Output() newAltroEvent = new EventEmitter();
 

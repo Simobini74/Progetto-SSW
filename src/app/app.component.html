@@ -1,7 +1,7 @@
 <div *ngIf="log == false; else Else">
 <h1>{{title}}</h1>
 <h2>{{name}}</h2>
-  <app-chiave (newKeyEvent)="login($event)" (newAltroEvent)="getKey"></app-chiave>
+  <app-chiave (newKeyEvent)="login($event)" (newAltroEvent)="getKey($event)"></app-chiave>
 </div>
 <ng-template #Else>
   <h3>{{title}} {{key}}</h3>
