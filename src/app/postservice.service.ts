@@ -20,6 +20,13 @@ export class PostserviceService {
       );
       return promise1;
     }
+    public Key() {
+      let promise2 = fetch(this.apiURL + '/new', { method: 'POST' }).then(
+        response => response.json(),
+        error => alert(error)
+      );
+      return promise2;
+    }
 
       
     } 
