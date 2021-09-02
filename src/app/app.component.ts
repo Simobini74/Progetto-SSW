@@ -19,31 +19,6 @@ export class AppComponent{
   title: string = 'Progetto app Postit' ;
   selezione : newPost;
   name: string ='Simone Bini';
-  key:string;
-  postit: Array<newPost>;
-  
-  constructor(private ps: PostserviceService ) {
-    this.postit=new Array<newPost>();
-   }
-  inviaChiave = async (key: string = null) => {
-    if(key == null) {
-      const k = await this.ps.requestKey();
-      this.inviaChiave(k);
-    }
-  }
 
-  selezionaPost(itemName: string) {
-	  var trovato: Array<newPost> = this.postit.filter(
-      el => ( el.titolo === itemName )
-    );
-    this.selezione = trovato[0];
-    
-  }
-  clean() {
-    this.selezione=undefined;
-  }
-  addPost(newPost) {
-    this.postit.push(newPost);
-  }
 
 }

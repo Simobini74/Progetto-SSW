@@ -1,14 +1,3 @@
 <h1>{{title}}</h1>
 <h2>{{name}}</h2>
-<ul>
-<li *ngFor='let post of postit' >
-  <button (click)="selezionaPost(post.titolo)">{{post.titolo}}</button>
-</li>
-</ul>
-<p *ngIf = "selezione !== undefined">
-Il contenuto di {{selezione.titolo}} è {{selezione.contenuto}}
-<button (click) = 'clean()'>Chiudi</button><br>
-<button (click)= 'clean()'>Elimina il postit {{selezione.titolo}}</button>
-</p>
-<app-nuovopostit (NewPostEvent)="addPost($event)"> </app-nuovopostit>
-<button type="button" (click)="inviaChiave(key.value)">Invia chiave</button>
+
