@@ -20,6 +20,18 @@ export class AppComponent{
   log: boolean = false;
   key = '';
   constructor(private service: PostserviceService) {}
+  showOne(id: newPost) {
+    this.selezione.titolo = id.titolo;
+    this.selezione.contenuto = id.contenuto;
+  }
+  addPost(newPostit: newPost) {
+    this.service.apiKEY = this.key;
+    this.savedPosts.push(newPostit);
+    let newmsg: string = JSON.stringify(this.savedPosts);
+    this.service
+      .postData(newmsg)
+      .then(response => response.json(), error => alert(error));
+  }
   login(k: string) {
     this.service.apiKEY = k;
     this.service
