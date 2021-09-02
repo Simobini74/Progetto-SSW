@@ -4,4 +4,4 @@ Inserisci la chiave per accedere:
 <input type="text" #yourK (keyup.enter)='useKey(yourK.value); yourK.value=""'/>
 <br><br><br>
 Non hai la Chiave?
-<button click="getKey()">Richiedi una nuova chiave</button>
+<button (click)= getKey()>Richiedi una nuova chiave</button>

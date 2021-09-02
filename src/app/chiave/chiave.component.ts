@@ -16,9 +16,5 @@ export class ChiaveComponent {
     this.newAltroEvent.emit();
   }
 
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

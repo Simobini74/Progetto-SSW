@@ -1,11 +1,14 @@
-<div *ngIf="log == false; else Else">
-<h1>{{title}}</h1>
+<div >
+<h1>{{title}}</h1> 
 <h2>{{name}}</h2>
-  <app-chiave (newKeyEvent)="login($event)" (newAltroEvent)="getKey($event)"></app-chiave>
+<div *ngIf="log == false; else Else">
+  <app-chiave (newKeyEvent)="login($event)" (newAltroEvent)="getKey($event)">
+  </app-chiave>
 </div>
 <ng-template #Else>
   <h3>{{title}} {{key}}</h3>
-  <div *ngIf="savedPosts.length == 0; ">
-    <p> Non ci sono ancora post-it!
-  </div>  
+  <div *ngIf="savedPosts.length == 0; else cisono">
+    <p> Non ci sono ancora post-it!     
+</div>
+
 

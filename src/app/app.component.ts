@@ -19,6 +19,9 @@ export class AppComponent{
   savedPosts: Array<newPost> = [];
   log: boolean = false;
   key = '';
+  click: boolean = false;
+  importants: Array<newPost>;
+  aggiungi: boolean = false;
   constructor(private service: PostserviceService) {}
   showOne(id: newPost) {
     this.selezione.titolo = id.titolo;
@@ -54,6 +57,9 @@ export class AppComponent{
       this.key = key;
     });
     this.log = true;
+  }
+  crea() {
+    this.aggiungi = true;
   }
 
 
