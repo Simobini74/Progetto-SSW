@@ -4,11 +4,8 @@ import { PostserviceService } from './postservice.service';
 class newPost {
   titolo: string;
   contenuto: string; 
-  constructor(titolo: string, contenuto: string) {
-    this.titolo=titolo;
-    this.contenuto=contenuto;
+  imprtante:boolean;
   }
-}
 
 @Component({
   selector: 'my-app',
@@ -16,9 +13,11 @@ class newPost {
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent{
-  title: string = 'Progetto app Postit' ;
-  selezione : newPost;
+  title: string = 'Progetto app Postit' ; 
   name: string ='Simone Bini';
+  selezione : newPost =new newPost();
+  savedPosts: Array<newPost> = [];
+
 
 
 }
