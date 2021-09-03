@@ -4,7 +4,7 @@ import { PostserviceService } from './postservice.service';
 class newPost {
   titolo: string;
   contenuto: string; 
-  imprtante:boolean;
+  importante:boolean;
   }
 
 @Component({
@@ -34,6 +34,28 @@ export class AppComponent{
     this.service
       .postData(newmsg)
       .then(response => response.json(), error => alert(error));
+  }
+
+  deletePost(id: object) {
+    this.savedPosts = this.savedPosts.filter(postit => postit != id);
+    //vanno eliminati anche da importants gli eliminati da saved
+    this.importants = this.savedPosts.filter(postit => postit.importante == true);
+    //per eliminare anche p di mostra se elimino
+    this.selezione.contenuto = undefined;
+    this.selezione.titolo = undefined;
+    let objToString: string = JSON.stringify(this.savedPosts);
+    this.service
+      .postData(objToString)
+      .then(response => response.json(), error => alert(error));
+  }
+
+  mostraImp() {
+    this.click = true;
+    this.importants = this.savedPosts.filter(postit => postit.importante == true);
+    console.log(this.savedPosts);
+  }
+  mostraAll() {
+    this.click = false;
   }
   login(k: string) {
     this.service.apiKEY = k;

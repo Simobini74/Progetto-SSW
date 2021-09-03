@@ -8,7 +8,39 @@
 <ng-template #Else>
   <h3>{{title}} {{key}}</h3>
   <div *ngIf="savedPosts.length == 0; else cisono">
-    <p> Non ci sono ancora post-it!     
-</div>
+    <p> Non ci sono ancora post-it!
+  </div>
+  <ng-template #cisono>
+    <!--se mostra solo importanti è stato cliccato-->
+    <ul *ngIf="click == true; else elseBlock">
+      <li *ngFor="let objImp of importants">
+        <button (click)="showOne(objImp)">{{objImp.titolo}}</button>
+        <button (click)="deletePost(objImp)">&#10008;</button>
+      </li>
+      <br />
+      <button (click)="mostraAll()">MOSTRA DI NUOVO TUTTI</button>
+    </ul>
+    <!--se mostra solo importanti NON è stato cliccato-->
+    <ng-template #elseBlock>
+      <ul>
+        <button (click)="mostraImp()">MOSTRA SOLO IMPORTANTI</button>
+        <li *ngFor="let obj of savedPosts">
+          <button (click)="showOne(obj)">{{obj.titolo}}</button>
+          <button (click)="deletePost(obj)">&#10008;</button>
+        </li>
+      </ul>
+    </ng-template>
+    <app-mostra [selezioneC]="selezione"> </app-mostra>
+  </ng-template>
+  <div *ngIf="aggiungi == true; else nonAggiungi">
+    <app-nuovo (newPostEvent)="addPost($event)"> </app-nuovo>
+  </div>
+  <ng-template #nonAggiungi>
+    <button (click)="crea()">CREA</button>
+  </ng-template>
+  <br /><br />
+
+</ng-template>
+ 
 
 
