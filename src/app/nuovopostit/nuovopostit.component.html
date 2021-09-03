@@ -1,4 +1,6 @@
-<p>
-Inserisci nuovo Postit
-</p>
-<input #nuovo (keyup.enter)="newPost(nuovo.value);nuovo.value=''">
+<br/><b>Aggiungi un nuovo post it</b><br/><br/>
+Titolo:<input maxlength="20" #nuovoT/><br/><br/>
+Testo:<input maxlength="100" #nuovoC/><br/><br/>
+Segna se importante:<input type="radio" #nuovoI required/><br/><br/>
+<button (click)="createPost(nuovoT.value, nuovoC.value, nuovoI.checked);nuovoT.value='';nuovoC.value=''; nuovoI.checked= false">SALVA</button>
+<div id="alert"></div>
