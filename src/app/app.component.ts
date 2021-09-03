@@ -1,10 +1,10 @@
 import { Component, VERSION } from '@angular/core';
 import { PostserviceService } from './postservice.service';
 
- exportclass newPost {
+ export class newPost {
   titolo: string;
   contenuto: string; 
-  importante:boolean;
+  imp:boolean;
   }
 
 @Component({
@@ -39,7 +39,7 @@ export class AppComponent{
   deletePost(id: object) {
     this.savedPosts = this.savedPosts.filter(postit => postit != id);
     //vanno eliminati anche da importants gli eliminati da saved
-    this.importants = this.savedPosts.filter(postit => postit.importante == true);
+    this.importants = this.savedPosts.filter(postit => postit.imp == true);
     //per eliminare anche p di mostra se elimino
     this.selezione.contenuto = undefined;
     this.selezione.titolo = undefined;
@@ -51,7 +51,7 @@ export class AppComponent{
 
   mostraImp() {
     this.click = true;
-    this.importants = this.savedPosts.filter(postit => postit.importante == true);
+    this.importants = this.savedPosts.filter(postit => postit.imp == true);
     console.log(this.savedPosts);
   }
   mostraAll() {

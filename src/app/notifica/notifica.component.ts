@@ -7,6 +7,11 @@ import {newPost} from '../app.component'
   styleUrls: ['./notifica.component.css']
 })
 export class NotificaComponent {
+  @Input() selezioneC: newPost;
+
+clean() {
+   this.selezioneC.contenuto = undefined;
+  }
 
   constructor() { }
 
