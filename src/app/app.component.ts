@@ -1,7 +1,7 @@
 import { Component, VERSION } from '@angular/core';
 import { PostserviceService } from './postservice.service';
 
-class newPost {
+ exportclass newPost {
   titolo: string;
   contenuto: string; 
   importante:boolean;
