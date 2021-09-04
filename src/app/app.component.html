@@ -8,8 +8,6 @@
 <ng-template #Else>
   <h3>La tua chiave per entrare è: {{key}}</h3>
   <div *ngIf="savedPosts.length == 0; else cisono">
-    <p> Non ci sono ancora post-it!</p>
-    <button (click)="crea()">Inserisci Postit</button>
   </div>
   <ng-template #cisono>
     <ul *ngIf="click == true; else elseBlock">
@@ -36,8 +34,7 @@
   <ng-template #nonAggiungi>
     <button (click)="crea()">CREA</button>
   </ng-template>
-  <br /><br />  
-  
+  <br /><br />   
 
 </ng-template>
  
