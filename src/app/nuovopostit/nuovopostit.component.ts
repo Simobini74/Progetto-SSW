@@ -6,7 +6,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./nuovopostit.component.css']
 })
 export class NuovopostitComponent  {
-  @Output() newPostEvent = new EventEmitter<Object>();
+  @Output() newPostEvent = new EventEmitter<any>();
 
   createPost(titolo: string, contenuto: string, imp: boolean) {
     if (titolo != '') {

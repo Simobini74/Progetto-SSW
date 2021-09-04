@@ -12,6 +12,7 @@
     <button (click)="crea()">Inserisci Postit</button>
   </div>
   <ng-template #cisono>
+  <app-nuovopostit (newPostEvent)="addPost($event)"></app-nuovopostit>
   
 
  
