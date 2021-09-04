@@ -29,8 +29,10 @@
       </ul>
     </ng-template>
     <app-notifica [selezioneC]="selezione"> </app-notifica>
-  </ng-template>
-  <app-nuovopostit (newPostEvent)="addPost($event)"></app-nuovopostit>
+  </ng-template>  
+  <div *ngIf="aggiungi == true; else nonAggiungi">  
+    <app-nuovopostit (newPostEvent)="addPost($event)"></app-nuovopostit>
+  </div>
   <ng-template #nonAggiungi>
     <button (click)="crea()">CREA</button>
   </ng-template>
