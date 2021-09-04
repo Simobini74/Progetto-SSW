@@ -12,6 +12,24 @@
     <button (click)="crea()">Inserisci Postit</button>
   </div>
   <ng-template #cisono>
+    <ul *ngIf="click == true; else elseBlock">
+      <li *ngFor="let objImp of importants">
+        <button (click)="showOne(objImp)">{{objImp.titolo}}</button>
+        <button (click)="deletePost(objImp)">&#10008;</button>
+      </li>
+      <br />
+      <button (click)="mostraAll()">MOSTRA DI NUOVO TUTTI</button>
+    </ul>
+    <!--se mostra solo importanti NON è stato cliccato-->
+    <ng-template #elseBlock>
+      <ul>
+        <button (click)="mostraImp()">MOSTRA SOLO IMPORTANTI</button>
+        <li *ngFor="let obj of savedPosts">
+          <button (click)="showOne(obj)">{{obj.titolo}}</button>
+          <button (click)="deletePost(obj)">&#10008;</button>
+        </li>
+      </ul>
+    </ng-template>
   <app-nuovopostit (newPostEvent)="addPost($event)"></app-nuovopostit>
   
 
