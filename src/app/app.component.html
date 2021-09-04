@@ -33,10 +33,10 @@
     <app-notifica [selezioneC]="selezione"> </app-notifica>
   </ng-template>
   <app-nuovopostit (newPostEvent)="addPost($event)"></app-nuovopostit>
-  
-
- 
-    
+  <ng-template #nonAggiungi>
+    <button (click)="crea()">CREA</button>
+  </ng-template>
+  <br /><br />  
   
 
 </ng-template>
