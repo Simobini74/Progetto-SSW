@@ -10,8 +10,10 @@
   <div *ngIf="savedPosts.length == 0; else cisono">
     <p> Non ci sono ancora post-it!
   </div>
-  <ng-template #cisono>
-    <!--se mostra solo importanti è stato cliccato-->
+  <ng-template #cisono>  
+    <button (click)="crea()">CREA</button>
+
+ 
     
   
 
