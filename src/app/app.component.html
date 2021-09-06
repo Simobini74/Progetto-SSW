@@ -13,7 +13,7 @@
     <ul *ngIf="click == true; else elseBlock">
       <li *ngFor="let objImp of importants">
         <button (click)="showOne(objImp)">{{objImp.titolo}}</button>
-        <button (click)="deletePost(objImp)">&#10008;</button>
+        <button (click)="deletePost(objImp)">ELIMINA</button>
       </li>
       <br />
       <button (click)="mostraAll()">MOSTRA DI NUOVO TUTTI</button>
