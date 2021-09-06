@@ -13,7 +13,7 @@
     <ul *ngIf="click == true; else elseBlock">
       <li *ngFor="let objImp of importants">
         <button (click)="showOne(objImp)">{{objImp.titolo}}</button>
-        <button (click)="deletePost(objImp)">ELIMINA</button>
+        <button (click)="deletePost(objImp)">ELIMINA POSTIT</button>
       </li>
       <br />
       <button (click)="mostraAll()">MOSTRA DI NUOVO TUTTI</button>
@@ -24,7 +24,7 @@
         <button (click)="mostraImp()">MOSTRA SOLO IMPORTANTI</button>
         <li *ngFor="let obj of savedPosts">
           <button (click)="showOne(obj)">{{obj.titolo}}</button>
-          <button (click)="deletePost(obj)">&#10008;</button>
+          <button (click)="deletePost(obj)">ELIMINA POSTIT</button>
         </li>
       </ul>
     </ng-template>
